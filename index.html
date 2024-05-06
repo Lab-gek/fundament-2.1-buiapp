@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weerbericht</title>
+    <script type="text/javascript">
+        fetch('https://data.buienradar.nl/2.0/feed/json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                document.getElementById('voorspelling').textContent = data.forecast.weatherreport.summary;            })
+            .catch(function (error) {
+                // De belofte werd verbroken.
+                alert('Er ging iets mis!');
+            });
+    </script>
 </head>
 <body>
-    
+    <h2>Weerbericht</h2>
+    <p id="voorspelling"></p>
 </body>
 </html>
