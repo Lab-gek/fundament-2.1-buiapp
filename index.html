@@ -10,7 +10,7 @@
                 return response.json();
             })
             .then(function (data) {
-                document.getElementById('voorspelling').textContent = data.forecast.weatherreport.summary;            })
+                document.getElementById('voorspelling').textContent = data.forecast.shortterm.forecast;            })
             .catch(function (error) {
                 // De belofte werd verbroken.
                 alert('Er ging iets mis!');
